@@ -1,0 +1,171 @@
+/* ბაზისური რესეტი */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* Header სექციის სტილები */
+.header {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Flex Container - მაქსიმალური სიგანე 1200px და ცენტრირება */
+.flex-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ლოგოს კონტეინერი */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.header-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #27251f;
+    letter-spacing: -0.5px;
+}
+
+/* ნავიგაცია */
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #495057;
+    font-size: 0.95rem;
+    font-weight: 600;
+    position: relative;
+    padding: 0.25rem 0;
+    transition: color 0.2s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffc300;
+    transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+    color: #111111;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ავტორიზაციის ღილაკები */
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn {
+    padding: 0.55rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-signin {
+    background-color: transparent;
+    color: #27251f;
+    border-color: #dee2e6;
+}
+
+.btn-signin:hover {
+    background-color: #f1f3f5;
+    border-color: #ced4da;
+}
+
+.btn-signup {
+    background-color: #ffc300;
+    color: #27251f;
+    border-color: #ffc300;
+}
+
+.btn-signup:hover {
+    background-color: #e6b000;
+    border-color: #e6b000;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(255, 195, 0, 0.35);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* რესპონსივი */
+@media (max-width: 900px) {
+    .flex-container {
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+    }
+
+    .nav-list {
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.25rem 1rem;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .header-title {
+        font-size: 1.2rem;
+    }
+}
